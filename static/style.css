@@ -1,0 +1,136 @@
+h1,h2,h3 {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.navbar {
+    padding-top: 50px;
+}
+
+.container-fluid {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-right: 20px;
+    padding-left: 20px;
+    justify-content: right !important;
+}
+
+.navbar-nav {
+    margin: auto;
+}
+
+.navbar-toggler {
+    float: right !important;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.nav-link {
+    font-family: 'Roboto Mono', monospace;
+    color: white !important;
+    text-align: right;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    text-decoration: none;
+}
+
+.nav-link::before {
+    content: "/";
+    opacity: 0;
+    transition: .3s;
+}
+
+.nav-link:hover:before {
+    content: "/";
+    transition: .3s;
+    opacity: 1;
+}
+
+.hamburger-button {
+    background-color: transparent;
+    border-radius: 6px;
+    border-style: solid;
+    color: white;
+}
+
+.fa-bars {
+    color: white !important;
+}
+
+
+#top-banner {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(79,9,121,1) 51%, rgba(0,149,255,1) 100%);
+}
+
+#header-container {
+    position: relative;
+    width: 100%;
+    height: 36vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    flex-wrap: wrap;
+    gap: 75px;
+}
+
+#header-info {
+    font-family: Roboto,sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#headshot-container {
+    overflow: hidden;
+    margin-top: 60px;
+    height: 400px;
+    width: 280px;
+    border-radius: 4px;
+    display: flex;
+}
+
+#headshot {
+    position: relative;
+    right: 90px;
+}
+
+.social-icons {
+    text-decoration: none !important;
+    font-size: 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    transition: .3s;
+    color: lightblue !important;
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 992px) {
+    #header-info {
+        color: rgba(240, 240, 240, 0.988);   
+    }
+
+    .social-icons {
+        color: white;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #header-info {
+        color: black;
+    }
+    
+    a {
+        color: black !important;
+    }
+}
