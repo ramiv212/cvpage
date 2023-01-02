@@ -13,3 +13,7 @@ def hello_world():
 
 PORT = os.environ["PORT"]
 app.run(debug=True,host="0.0.0.0", port=PORT)
+
+
+# TODO
+# get my age to auto update on the page. Using jinya and python.

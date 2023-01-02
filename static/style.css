@@ -2,8 +2,19 @@ h1,h2,h3 {
     font-family: 'Roboto Mono', monospace;
 }
 
-.navbar {
-    padding-top: 50px;
+button {
+    background-color: rgb(81,46,153);
+    color: white;
+    border-style: none;
+    padding: 15px;
+
+    transition: background-color .3s;
+}
+
+button:hover {
+    transition: .2s;
+    background-color: rgb(94, 67, 147);
+    
 }
 
 .container-fluid {
@@ -71,7 +82,6 @@ h1,h2,h3 {
 #header-container {
     position: relative;
     width: 100%;
-    height: 36vh;
     display: flex;
     align-items: center;
     justify-content: center; 
@@ -83,12 +93,10 @@ h1,h2,h3 {
     font-family: Roboto,sans-serif;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
 }
 
 #headshot-container {
     overflow: hidden;
-    margin-top: 60px;
     height: 400px;
     width: 280px;
     border-radius: 4px;
@@ -115,22 +123,53 @@ a:hover {
     text-decoration: underline;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 746px) {
     #header-info {
-        color: rgba(240, 240, 240, 0.988);   
+        color: rgba(240, 240, 240, 0.988);
+        align-items: flex-start;
+    }
+
+    #header-container {
+        height: 425px;
     }
 
     .social-icons {
         color: white;
     }
+
+    #content {
+        margin-top: 100px;
+    }
+
+    .navbar {
+        padding-top: 50px;
+    }
+
+    #headshot-container {
+        margin-top: 60px;
+    }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 745px) {
     #header-info {
         color: black;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #header-info > h1 {
+        text-align: center;
+    }
+
+    #header-container {
+        height: 375px;
     }
     
     a {
         color: black !important;
+    }
+
+    #content {
+        margin-top: 500px;
     }
 }

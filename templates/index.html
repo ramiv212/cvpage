@@ -1,13 +1,46 @@
-{% extends "layout.html" %}
-{% block title %}Homepage{% endblock %}
-{% block head %}
-  {{ super() }}
-  <style type="text/css">
-    .important { color: #336699; }
-  </style>
-{% endblock %}
-{% block content %}
-  <h1>Index</h1>
-  <p class="important">
-    Welcome on my awesome homepage.
+{% extends "layout.html" %} {% block title %}Homepage{% endblock %} {% block
+head %} {{ super() }}
+<style type="text/css">
+  .important {
+    color: #336699;
+  }
+</style>
+{% endblock %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>HI!</h1>
+
+      <div style="margin-top: 35px">
+        <div class="col">
+          <p>
+            I am Junior Web developer able to build a Web presence from the
+            ground up - from concept, navigation, layout and programming to UX
+            and SEO. Skilled at writing well-designed, testable and efficient
+            code using current best practices in Web development. Fast learner,
+            hard worker and team player who is proficient in an array of
+            scripting languages and multimedia Web tools.
+          </p>
+          <div style="display: flex; 
+                      justify-content: center; 
+                      align-items: center; 
+                      margin-top: 65px;
+                      margin-bottom: 55px;
+                      height: 100%;">
+            <button type="button" style="width: 200px;">DOWNLOAD MY CV</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col">
+      <h1>RESUME</h1>
+        <div style="margin-top: 35px;">
+          Lorem ipsum dolor sit amet, communication adipisicing elit, helpful eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud sence of humour ullamco laboris nisi ut honest ea commodo consequat. Duis aute irure dolor in upper-intermediate english level velit dolore eu ivivdtevoluptatem ontend developer.
+        </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
