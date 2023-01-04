@@ -1,32 +1,32 @@
 {% extends "layout.html" %} {% block title %}Homepage{% endblock %} {% block
-head %} {{ super() }}
-<style type="text/css">
-  .important {
-    color: #336699;
-  }
-</style>
-{% endblock %} {% block content %}
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h1 style="font-weight: 400;">HI!</h1>
-
-      <div style="margin-top: 35px">
-        <div class="col">
-          <p>
-            I am Junior Web developer able to build a Web presence from the
-            ground up - from concept, navigation, layout and programming to UX
-            and SEO. Skilled at writing well-designed, testable and efficient
-            code using current best practices in Web development. Fast learner,
-            hard worker and team player who is proficient in an array of
-            scripting languages and multimedia Web tools.
-          </p>
-          <div style="display: flex; 
-                      justify-content: center; 
-                      align-items: center; 
-                      margin-top: 65px;
-                      margin-bottom: 55px;
-                      height: 100%;">
+  head %} {{ super() }}
+  <style type="text/css">
+    .important {
+      color: #336699;
+    }
+  </style>
+  {% endblock %} {% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1 style="font-weight: 400;">HI!</h1>
+        
+        <div style="margin-top: 35px">
+          <div class="col">
+            <p>
+              I am Junior Web developer able to build a Web presence from the
+              ground up - from concept, navigation, layout and programming to UX
+              and SEO. Skilled at writing well-designed, testable and efficient
+              code using current best practices in Web development. Fast learner,
+              hard worker and team player who is proficient in an array of
+              scripting languages and multimedia Web tools.
+            </p>
+            <div style="display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            margin-top: 65px;
+            margin-bottom: 55px;
+            height: 100%;">
             <button type="button" style="width: 200px;">DOWNLOAD MY CV</button>
           </div>
         </div>
@@ -37,40 +37,143 @@ head %} {{ super() }}
   <div class="row">
     <div class="col">
       <h1 style="font-weight: 400;">RESUME</h1>
-        <div style="margin-top: 35px;">
-          Lorem ipsum dolor sit amet, communication adipisicing elit, helpful eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud sence of humour ullamco laboris nisi ut honest ea commodo consequat. Duis aute irure dolor in upper-intermediate english level velit dolore eu ivivdtevoluptatem ontend developer.
-        </div>
+      <div style="margin-top: 35px;">
+        Lorem ipsum dolor sit amet, communication adipisicing elit, helpful eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud sence of humour ullamco laboris nisi ut honest ea commodo consequat. Duis aute irure dolor in upper-intermediate english level velit dolore eu ivivdtevoluptatem ontend developer.
+      </div>
     </div>
   </div>
-
+  
   <div class="row" style="margin-top: 50px;">
     <div class="col">
       <div>
         <h2 class="resume-section-title">Experience</h2>
       </div>
-
+      
       <div style="position: relative;">
         <div class="experience-section">
           <h3 class="experience-section-title">Grace Woodlands</h3>
           <div class="experience-year">2020</div>
-            <p style="margin: 0; padding-bottom: 25px;">
-              Awesome developer, lorem ipsum dolor sit amet, conse ctetur adipisicing elit, 
-              sed do eius- mod tempor incididunt ut labore et dolore magna aliqua.      
-            </p>
+          <p style="margin: 0; padding-bottom: 25px;">
+            Awesome developer, lorem ipsum dolor sit amet, conse ctetur adipisicing elit, 
+            sed do eius- mod tempor incididunt ut labore et dolore magna aliqua.      
+          </p>
         </div>
       </div>
-
+      
       <div style="position: relative;">
         <div class="experience-section">
           <h3 class="experience-section-title">Grace Woodlands</h3>
           <div class="experience-year">2020</div>
-            <p>
-              Awesome developer, lorem ipsum dolor sit amet, conse ctetur adipisicing elit, 
-              sed do eius- mod tempor incididunt ut labore et dolore magna aliqua.      
-            </p>
+          <p>
+            Awesome developer, lorem ipsum dolor sit amet, conse ctetur adipisicing elit, 
+            sed do eius- mod tempor incididunt ut labore et dolore magna aliqua.      
+          </p>
         </div>
       </div>
+      
+    </div>
+  </div>
+  
+  <div class="row" style="margin-top: 50px;">
+    <div class="col">
+      <div>
+        <h2 class="resume-section-title">Skills</h2>
+      </div>
+      
+      <div class="skills-container">
+        
+        <div class="skill-item">
+          <i class="fa-regular fa-file-code skill-svg"></i>
+          HTML
+        </div>
+        
+        <div class="skill-item">
+          <i class="fa-brands fa-css3-alt skill-svg"></i>
+          CSS
+        </div>
+        
+        <div class="skill-item">
+          <i class="fa-brands fa-square-js skill-svg"></i>
+          Javascript
+        </div>
+        
+        <div class="skill-item">
+          <i class="fa-brands fa-react skill-svg"></i>
+          React
+        </div>
+        
+        <div class="skill-item">
+          <i class="fa-brands fa-python skill-svg"></i>
+          Python
+        </div>
+        
+        <div class="skill-item">
+          <i class="fa-brands fa-bootstrap skill-svg"></i>
+          Bootstrap
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="column">
+      <div style="position: relative;">
+        <div class="experience-section">
+          <h2 class="resume-section-title">Other Skills</h2>
+          <span style="font-family: 'Roboto Mono', monospace;">
+            <div>- Node JS</div>
+            <div>- Express JS</div>
+            <div>- Flask</div>
+            <div>- Flask-restful</div>
+            <div>- SQLAlchemy</div>
+            <div>- Sequelize</div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row" style="margin-top: 50px;">
+    <div class="column">
+      <h2 class="resume-section-title">Projects</h2>
 
+      <div class="project-container">
+        <div>
+          <img src="{{ url_for('static', filename='luloc.png') }}"  style="width: 100%;">
+        </div>
+        <div class="project-description">
+          <h3 class="experience-section-title">E-commerce website for a skincare store and clinic.</h3><br />
+          <p>This website was built for a client who had
+            previously been using Wix, but was unhappy with the results
+            they were getting. They wanted something better but they were
+            adamant about still having full control over the ability to 
+            add or remove products, change prices, put items on sale or
+            mark them as out of stock, etc.
+          </p>
+          <br>
+          <div style="font-family: 'Roboto Mono', monospace; font-size: 12px;">
+            USED STACK:
+          </div>
+            <div class="project-used-stack-container">
+              <div class="project-used-stack-child">React</div>
+              <div class="project-used-stack-child">Express JS</div>
+              <div class="project-used-stack-child">Prismic</div>
+              <div class="project-used-stack-child">Sequelize</div>
+              <div class="project-used-stack-child">Bootstrap</div>
+              <div class="project-used-stack-child">Stripe</div>
+            </div>
+
+            <a href="http://www.luloconline.com">
+            <div style="text-align: right;
+            margin-top: 30px;
+            font-family: 'Roboto Mono', monospace;
+            color: rgb(94, 67, 147);">
+              www.luloconine.com
+            </div>
+          </a>
+
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -163,6 +163,70 @@ a:hover {
     margin-bottom: 10px;
 }
 
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 30px;
+}
+
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 120 px;
+    color: rgb(94, 67, 147);
+    font-family: 'Roboto Mono', monospace;
+}
+
+.skill-svg {
+    width: 40px;
+    height: 40px;
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 20px;
+    border-style: solid;
+    border-width: 1px;
+
+    border-color: lightgray;
+    transition: .5s;
+    box-shadow: none;
+}
+
+.project-container:hover {
+    box-shadow: 3px 5px 12px #888888;
+    transition: .3s;
+}
+
+.project-description {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.project-used-stack-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+
+.project-used-stack-child {
+    display: flex;
+    justify-content: center;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgray;
+    font-size: 10px;
+    padding: 3px;
+    margin: 3px;
+}
+
 @media screen and (min-width: 746px) {
     #header-info {
         color: rgba(240, 240, 240, 0.988);
