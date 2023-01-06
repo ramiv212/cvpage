@@ -282,42 +282,39 @@
 
       <div class="project-container">
         <div class="project-image-container">
-          <img src="{{ url_for('static', filename='luloc.png') }}"  style="width: 100%;" class="project-image">
+          <img src="{{ url_for('static', filename='htmlchess.png') }}"  style="width: 100%;" class="project-image">
         </div>
         <div class="project-description">
-          <h3 class="experience-section-title">E-commerce website for a skincare store and clinic.</h3><br />
-          <p>This website was built for a client who had
-            previously been using Wix, but was unhappy with the results
-            they were getting. They wanted something better but they were
-            adamant about still having full control over the ability to 
-            add or remove products, change prices, put items on sale or
-            mark them as out of stock, etc.
-          </p>
-          <p>
-            This website is built on React, and uses Express JS to handle Stripe requests and query a SQL database for
-            reviews. Express is also used as the main endpoint that routes the browser to the React build. Prismic is used as a
-            CRM to give the client full control over the inventory and parts of the info rendered on the page. Both React and
-            Express query Prismic to get info on the products. 
+          <h3 class="experience-section-title">HTML Chess (Remote)</h3><br />
+          <p>This is a personal project that I had been working on to learn Javascript.
+            My original intention was to create a chess game using HTML and Javascript (instead of using Canvas)
+            without following a guide on how to do it. Once I had finished this project, I decided to challenge
+            myself further by taking the local version of this game that I had created and turn it into
+            a remote online game. This version is not 100% finished, so there are still a couple of bugs left to fix.
+            But contract work has taken priority, until I have some free time to come back and finish debugging it.
+            When you log in, you are put in a 'waiting' state until another player logs in and the game starts
+            automatically. It is intended to be able to handle many games at the same time.
+            The login system is not very nuanced at the moment so if you log in and accidentally get put into an instance
+            of the game without the person that you wanted to play with, simply refresh the game and log in again.
           </p>
           <br>
           <div style="font-family: 'Roboto Mono', monospace; font-size: 12px;">
             USED STACK:
           </div>
             <div class="project-used-stack-container">
-              <div class="project-used-stack-child">React</div>
+              <div class="project-used-stack-child">HTML</div>
+              <div class="project-used-stack-child">CSS</div>
+              <div class="project-used-stack-child">Javascript</div>
               <div class="project-used-stack-child">Express JS</div>
-              <div class="project-used-stack-child">Prismic</div>
-              <div class="project-used-stack-child">Sequelize</div>
-              <div class="project-used-stack-child">Bootstrap</div>
-              <div class="project-used-stack-child">Stripe</div>
+              <div class="project-used-stack-child">Socket.io</div>
             </div>
 
-            <a href="http://www.luloconline.com">
+            <a href="http://www.chess.ramirovaldes.com">
             <div style="text-align: right;
             margin-top: 30px;
             font-family: 'Roboto Mono', monospace;
             color: rgb(94, 67, 147);">
-              www.luloconine.com
+              chess.ramirovaldes.com
             </div>
           </a>
 
