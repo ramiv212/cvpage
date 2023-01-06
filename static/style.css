@@ -1,3 +1,5 @@
+*{scroll-behavior: smooth;}
+
 h1,h2,h3 {
     font-family: 'Roboto Mono', monospace;
 }
@@ -200,6 +202,11 @@ a:hover {
 .skill-svg {
     width: 40px;
     height: 40px;
+}
+
+.skill-svg:hover {
+    transition: .3s;
+    filter: drop-shadow(3px 3px 2px rgb(94, 67, 147,.4));
 }
 
 .project-container {
