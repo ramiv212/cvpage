@@ -160,7 +160,23 @@ a:hover {
 .experience-year {
     color: rgb(148, 148, 148);
     font-size: 15px;
+    margin-top: 10px;
     margin-bottom: 10px;
+    width: 40%;
+}
+
+.experience-year > a {
+    color: rgb(148, 148, 148) !important;
+}
+
+.experience-year > a:hover {
+    color: rgb(94, 67, 147) !important;
+}
+
+.experience-description {
+    margin: 0; padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
 }
 
 .skills-container {
@@ -188,18 +204,17 @@ a:hover {
 
 .project-container {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
     column-gap: 20px;
     border-style: solid;
     border-width: 1px;
-
     border-color: lightgray;
     transition: .5s;
     box-shadow: none;
+    margin-bottom: 50px;
 }
 
 .project-container:hover {
-    box-shadow: 3px 5px 12px #888888;
+    box-shadow: 0px 0px 15px 9px rgba(135, 135, 135, 0.354);
     transition: .3s;
 }
 
@@ -211,20 +226,37 @@ a:hover {
 }
 
 .project-used-stack-container{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(2,1fr);
+    display: flex;
 }
 
 .project-used-stack-child {
     display: flex;
     justify-content: center;
     border-style: solid;
-    border-width: 1px;
-    border-color: lightgray;
+    border-width: .5px;
+    border-color: rgba(211, 211, 211, 0.515);
     font-size: 10px;
     padding: 3px;
     margin: 3px;
+    max-width: 80px;
+    min-width: 50px;
+}
+
+.project-image-container {
+    overflow: hidden;
+}
+
+.project-image {
+    
+}
+
+.other-skills-grid {
+    font-family: 'Roboto Mono', monospace;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    row-gap: 20px;
+    justify-content: space-around;
+    color:rgb(94, 67, 147);
 }
 
 @media screen and (min-width: 746px) {
@@ -252,6 +284,14 @@ a:hover {
     #headshot-container {
         margin-top: 60px;
     }
+
+    .project-container {
+        grid-template-columns: repeat(2,auto);
+    }
+    
+    .project-image-container {
+        max-width: 420px;
+    }
 }
 
 @media screen and (max-width: 745px) {
@@ -275,5 +315,15 @@ a:hover {
 
     #content {
         margin-top: 500px;
+    }
+
+    .project-container {
+        grid-template-columns: repeat(1,fr);
+        grid-template-rows: repeat(2,auto);
+    }
+
+    .project-image-container {
+        width: auto;
+        overflow: none;
     }
 }
