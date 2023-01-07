@@ -37,9 +37,11 @@ def send_email_func(name, from_addr, body_text):
 
 @app.route("/")
 def hello_world():
+
+    print(request)
     
     if request.remote_addr != "127.0.0.1":
-        body_text = f'Somebody with the IP address {request.remote_addr} has visited your page!'
+        body_text = f'Somebody with the IP address {request.access_route} and {request.remote_addr} has visited your page!'
 
         msg = MIMEMultipart()
         msg["from"] = 'ramirovaldes.com'
