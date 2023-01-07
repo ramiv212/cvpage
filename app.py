@@ -6,19 +6,20 @@ import smtplib
 import ssl
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+import socket
 
 load_dotenv()
 
 app = Flask(__name__)
 recaptcha = os.environ['RECAPTCHA']
 
-HOST = 'smtp-mail.outlook.com'
+HOST = 'smtp.gmail.com'
 
 def send_email_func(name, from_addr, body_text):
 
     msg = MIMEMultipart()
     msg["from"] = from_addr
-    msg["to"] = os.environ['HOST_USERNAME']
+    msg["to"] = 'ramiv212@hotmail.com'
     msg["subject"] = f"{name} has sent you an email via ramirovaldes.com! with {from_addr}"
     msg.attach(MIMEText(body_text, 'plain'))
 
@@ -30,7 +31,7 @@ def send_email_func(name, from_addr, body_text):
     connection.login(os.environ['HOST_USERNAME'], os.environ['HOST_PASSWORD'])
     text = msg.as_string()
     sender_email = from_addr
-    receiver_email = os.environ['HOST_USERNAME']
+    receiver_email = 'ramiv212@hotmail.com'
     connection.sendmail(sender_email, receiver_email, text)
 
 
@@ -61,12 +62,8 @@ def send_email():
     else:
         json_response['message_validation'] = True
 
-    if json_response['name_validation'] and json_response['email_validation'] and json_response['message_validation']:
-        send_email_func(request.json['name'],request.json['email'],request.json['message'])
 
     return json.dumps(json_response)
-
-print(os.environ['HOST_USERNAME'],os.environ['HOST_PASSWORD'])
 
 PORT = os.environ["PORT"]
 app.run(debug=True,host="0.0.0.0", port=PORT)
