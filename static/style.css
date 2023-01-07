@@ -88,7 +88,6 @@ h1,h2,h3 {
     display: flex;
     align-items: center;
     justify-content: center; 
-    flex-wrap: wrap;
 }
 
 #header-info {
@@ -309,7 +308,7 @@ a:hover {
     font-family: 'Roboto Mono', monospace;
 }
 
-@media screen and (min-width: 746px) {
+@media screen and (min-width: 831px) {
     #header-info {
         color: rgba(240, 240, 240, 0.988);
         align-items: flex-start;
@@ -337,11 +336,13 @@ a:hover {
     }
 }
 
-@media screen and (max-width: 745px) {
+@media screen and (max-width: 832px) {
     #header-info {
         color: black;
         justify-content: center;
         align-items: center;
+        position: absolute;
+        top: 400px;
     }
 
     #header-info > h1 {
@@ -350,7 +351,12 @@ a:hover {
     }
 
     #header-container {
-        height: 375px;
+        height: 390px;
+    }
+
+    #headshot-container {
+        top: 20px;
+        position: absolute;
     }
     
     a {
