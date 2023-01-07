@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,jsonify
 import json
 from dotenv import load_dotenv
 import os
@@ -37,6 +37,27 @@ def send_email_func(name, from_addr, body_text):
 
 @app.route("/")
 def hello_world():
+    
+    if request.remote_addr != "127.0.0.1":
+        body_text = f'Somebody with the IP address {request.remote_addr} has visited your page!'
+
+        msg = MIMEMultipart()
+        msg["from"] = 'ramirovaldes.com'
+        msg["to"] = 'ramiv212@hotmail.com'
+        msg["subject"] = f"Somebody has checked out your CV page!"
+        msg.attach(MIMEText(body_text, 'plain'))
+
+        context = ssl.SSLContext(ssl.PROTOCOL_TLS)
+        connection = smtplib.SMTP(HOST, 587)
+        connection.ehlo()
+        connection.starttls(context=context)
+        connection.ehlo()
+        connection.login(os.environ['HOST_USERNAME'], os.environ['HOST_PASSWORD'])
+        text = msg.as_string()
+        sender_email = 'ramiv212@gmail.com'
+        receiver_email = 'ramiv212@hotmail.com'
+        connection.sendmail(sender_email, receiver_email, text)
+
     return render_template('index.html',recaptcha=recaptcha)
 
 
