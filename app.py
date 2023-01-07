@@ -2,30 +2,37 @@ from flask import Flask,render_template,request
 import json
 from dotenv import load_dotenv
 import os
+import smtplib
+import ssl
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 load_dotenv()
 
 app = Flask(__name__)
 recaptcha = os.environ['RECAPTCHA']
 
-HOST = 'smtp.live.com'
+HOST = 'smtp-mail.outlook.com'
 
-import smtplib
+def send_email_func(name, from_addr, body_text):
 
-def send_email(subject, to_addr, from_addr, body_text):
-    """
-    Send an email
-    """
-    BODY = "\r\n".join((
-            "From: %s" % from_addr,
-            "To: %s" % to_addr,
-            "Subject: %s" % subject ,
-            "",
-            body_text
-            ))
-    server = smtplib.SMTP(HOST)
-    server.sendmail(from_addr, [to_addr], BODY)
-    server.quit()
+    msg = MIMEMultipart()
+    msg["from"] = from_addr
+    msg["to"] = os.environ['HOST_USERNAME']
+    msg["subject"] = f"{name} has sent you an email via ramirovaldes.com! with {from_addr}"
+    msg.attach(MIMEText(body_text, 'plain'))
+
+    context = ssl.SSLContext(ssl.PROTOCOL_TLS)
+    connection = smtplib.SMTP(HOST, 587)
+    connection.ehlo()
+    connection.starttls(context=context)
+    connection.ehlo()
+    connection.login(os.environ['HOST_USERNAME'], os.environ['HOST_PASSWORD'])
+    text = msg.as_string()
+    sender_email = from_addr
+    receiver_email = os.environ['HOST_USERNAME']
+    connection.sendmail(sender_email, receiver_email, text)
+
 
 
 @app.route("/")
@@ -53,6 +60,9 @@ def send_email():
         json_response['message_validation'] = False
     else:
         json_response['message_validation'] = True
+
+    if json_response['name_validation'] and json_response['email_validation'] and json_response['message_validation']:
+        send_email_func(request.json['name'],request.json['email'],request.json['message'])
 
     return json.dumps(json_response)
 
