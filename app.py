@@ -24,7 +24,7 @@ def send_email_func(name, from_addr, body_text):
 
     context = ssl.SSLContext(ssl.PROTOCOL_TLS)
     connection = smtplib.SMTP(HOST, 587)
-    connection.ehlo("ramirovaldes.com")
+    connection.ehlo()
     connection.starttls(context=context)
     connection.ehlo()
     connection.login(os.environ['HOST_USERNAME'], os.environ['HOST_PASSWORD'])
