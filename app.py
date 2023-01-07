@@ -16,7 +16,6 @@ recaptcha = os.environ['RECAPTCHA']
 HOST = 'smtp.gmail.com'
 
 def send_email_func(name, from_addr, body_text):
-
     msg = MIMEMultipart()
     msg["from"] = from_addr
     msg["to"] = 'ramiv212@hotmail.com'
@@ -43,7 +42,6 @@ def hello_world():
 
 @app.route("/api/contact", methods=['POST'])
 def send_email():
-    print(request.json['name'])
 
     json_response = {}
 
@@ -62,6 +60,8 @@ def send_email():
     else:
         json_response['message_validation'] = True
 
+    if json_response['name_validation'] == True and json_response['email_validation'] == True and json_response['message_validation'] == True:
+        send_email_func(request.json['name'],request.json['email'],request.json['message'])
 
     return json.dumps(json_response)
 
