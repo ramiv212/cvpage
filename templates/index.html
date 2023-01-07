@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block title %}Homepage{% endblock %} {% block
+{% extends "layout.html" %} {% block title %}{% endblock %} {% block
   head %} {{ super() }}
   <style type="text/css">
     .important {
@@ -14,10 +14,10 @@
         <div style="margin-top: 35px">
           <div class="col">
             <p>
-              I am an A/V/L Technician and System Designer with more than 10 years in the audio recording
-              and live production space. In the wake of the pandemic, I began seriously pursuing
+              I am an A/V/L Technician and System Designer with more than 10 years in the Audio Recording
+              and Live Production space. In the wake of the pandemic, I began seriously pursuing
               programming as a personal challenge, and am now seeking to make a full career
-              change to Web Development. I am a fast learner with a passion for solving problems.
+              change towards Web Development. I am a fast learner with a passion for solving problems.
             </p>
             <div style="display: flex; 
             justify-content: center; 
@@ -107,7 +107,7 @@
         <div class="experience-section">
           <h3 class="experience-section-title">Grace Community Church Woodlands - Tech Director</h3>
           <div class="experience-year">
-            <div>2015 - 2019</div>
+            <div>2016 - 2019</div>
             <a href="http://www.gracewoodlands.com">gracewoodlands.com</a>
           </div>
           <div style="margin: 0; padding-bottom: 50px;">
@@ -253,7 +253,7 @@
             This website is built on React, and uses ExpressJS to handle Stripe requests, query a MySQL database to get and set
             reviews, and handle the contact form functionality. Express is also used to forward routing requests to the React build. Prismic is used as a
             CRM to give the client full control over the inventory and parts of the info rendered on the page. Both React and
-            Express query Prismic to get info on the products. 
+            Express query Prismic to get info on the products. It will be ready for production in a week or two.
           </p>
           <br>
           <div style="font-family: 'Roboto Mono', monospace; font-size: 12px;">
@@ -274,14 +274,23 @@
             margin-top: 30px;
             font-family: 'Roboto Mono', monospace;
             color: rgb(94, 67, 147);">
-              www.luloconine.com
+              Old Website: www.luloconine.com
+            </div>
+          </a>
+
+          <a href="https://luloconline-production.up.railway.app/">
+            <div style="text-align: right;
+            margin-top: 30px;
+            font-family: 'Roboto Mono', monospace;
+            color: rgb(94, 67, 147);">
+              New website
             </div>
           </a>
 
         </div>
       </div>
 
-      <div class="project-container">
+      <div class="project-container" onclick="redirectToChess()" style="cursor: pointer;">
         <div class="project-image-container">
           <img src="{{ url_for('static', filename='htmlchess.png') }}"  style="width: 100%;" class="project-image">
         </div>
@@ -289,7 +298,7 @@
           <h3 class="experience-section-title">HTML Chess (Remote)</h3><br />
           <p>This is a personal project that I had been working on to learn Javascript.
             My original intention was to create a chess game using HTML and Javascript (instead of using Canvas)
-            without following a guide on how to do it. Once I had finished this project, I decided to challenge
+            without following a guide on how to do it. Once I had finished that project, I decided to challenge
             myself further by taking the local version of this game that I had created and turn it into
             a remote online game. This version is not 100% finished, so there are still a couple of bugs left to fix.
             But contract work has taken priority, until I have some free time to come back and finish debugging it.
@@ -332,8 +341,8 @@
           <h3 class="experience-section-title">Python Blackjack</h3><br />
           <p>
             This was another project that I challenged myself to make without following a guide when I was learning Python,
-            limiting myself only to googling syntax. There are a few validation checks that need to be implemented but I moved on
-            to other projects before touching up the details on this one. Press play on the IFrame to run the program. If Safari
+            limiting myself to only googling syntax. There are a few validation checks that need to be implemented but I moved on
+            to other projects before touching up the details on this one. Press play on the iframe to run the program. If Safari
             does not work you may have to switch to Chrome.
 
           </p>
@@ -356,8 +365,8 @@
           <h3 class="experience-section-title">Python Tic-Tac-Toe VS Computer</h3><br />
           <p>
             This was yet another project that I challenged myself to make without following a guide when I was learning Python,
-            limiting myself only to googling syntax. The twist to this one is that I wanted to be able to
-            play against the computer. Press play on the IFrame to run the program. If Safari
+            limiting myself to only googling syntax. The twist to this one is that I wanted to be able to
+            play against the computer. Press play on the iframe to run the program. If Safari
             does not work you may have to switch to Chrome.
 
           </p>
@@ -368,6 +377,37 @@
             <div class="project-used-stack-container">
               <div class="project-used-stack-child">Python</div>
             </div>
+        </div>
+      </div>
+
+
+      <div class="project-container">
+        <div class="project-image-container">
+          <img src="{{ url_for('static', filename='ramirovaldesdotcom.png') }}"  style="width: 100%;" class="project-image">
+        </div>
+        <div class="project-description">
+          <h3 class="experience-section-title">Personal CV Website</h3><br />
+          <p>
+            In preparation to start applying for jobs, I decided to return to my roots and
+            use Python to create my CV website, since I have been diving
+            deep into React for months. It could just have easily been a static site
+            but I wanted to go back to coding Python for a little bit to try to keep my
+            Python skills sharp. Coding in Python feels just as nice as I remember.
+            Like riding a bike. The Flask server handles the contact form POST request,
+            as well as some simple server-side form validation.
+
+          </p>
+          <br>
+          <div style="font-family: 'Roboto Mono', monospace; font-size: 12px;">
+            USED STACK:
+          </div>
+          <div class="project-used-stack-container">
+            <div class="project-used-stack-child">HTML</div>
+            <div class="project-used-stack-child">CSS</div>
+            <div class="project-used-stack-child">Javascript</div>
+            <div class="project-used-stack-child">Python</div>
+            <div class="project-used-stack-child">Flask</div>
+          </div>
         </div>
       </div>
 

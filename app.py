@@ -51,7 +51,7 @@ def send_email():
     else:
         json_response['name_validation'] = True
 
-    if not request.json['email']:
+    if not request.json['email'] and request.json['email'].find("@") == -1 or request.json['email'].find(".") == -1:
         json_response['email_validation'] = False
     else:
         json_response['email_validation'] = True
@@ -65,6 +65,8 @@ def send_email():
         send_email_func(request.json['name'],request.json['email'],request.json['message'])
 
     return json.dumps(json_response)
+
+print(os.environ['HOST_USERNAME'],os.environ['HOST_PASSWORD'])
 
 PORT = os.environ["PORT"]
 app.run(debug=True,host="0.0.0.0", port=PORT)

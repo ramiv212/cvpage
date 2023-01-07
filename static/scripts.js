@@ -27,3 +27,7 @@ function sendEmail(body) {
         emailValidation(data)
     })
 }
+
+function redirectToChess() {
+    window.location.href = "https://www.chess.ramirovaldes.com"
+}
