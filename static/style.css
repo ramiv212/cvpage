@@ -89,7 +89,6 @@ h1,h2,h3 {
     align-items: center;
     justify-content: center; 
     flex-wrap: wrap;
-    gap: 75px;
 }
 
 #header-info {
@@ -226,6 +225,14 @@ a:hover {
     transition: .3s;
 }
 
+.project-image-container {
+    width: auto;
+    overflow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .project-description {
     display: flex;
     justify-content: center;
@@ -310,6 +317,7 @@ a:hover {
 
     #header-container {
         height: 425px;
+        gap: 80px;
     }
 
     .social-icons {
@@ -338,6 +346,7 @@ a:hover {
 
     #header-info > h1 {
         text-align: center;
+        margin-top: 90px;
     }
 
     #header-container {
@@ -350,11 +359,6 @@ a:hover {
 
     #content {
         margin-top: 500px;
-    }
-
-    .project-image-container {
-        width: auto;
-        overflow: none;
     }
 }
 
