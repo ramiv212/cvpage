@@ -4,7 +4,7 @@ h1,h2,h3 {
     font-family: 'Roboto Mono', monospace;
 }
 
-button {
+.button {
     background-color: rgb(81,46,153);
     color: white;
     border-style: none;
@@ -13,9 +13,10 @@ button {
     transition: background-color .3s;
 }
 
-button:hover {
+.button:hover {
     transition: .2s;
     background-color: rgb(94, 67, 147);
+    text-decoration: none;
     
 }
 
