@@ -87,4 +87,4 @@ def send_email():
     return json.dumps(json_response)
 
 PORT = os.environ["PORT"]
-app.run(debug=True,host="0.0.0.0", port=PORT)
+app.run(host="0.0.0.0", port=PORT)
