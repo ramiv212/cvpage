@@ -7,6 +7,7 @@ import ssl
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import socket
+import requests
 
 load_dotenv()
 
@@ -39,6 +40,9 @@ def send_email_func(name, from_addr, body_text):
 def hello_world():
 
     print(request)
+
+    ip_geo = requests.get(f'https://api.ipgeolocation.io/ipgeo?apiKey={os.environ["GEO_API_KEY"]}&ip={request.access_route[0]}', headers={'Accept': 'application/json'})
+    print(ip_geo.json())
     
     if request.remote_addr != "127.0.0.1":
         body_text = f'Somebody with the IP address {request.access_route} and {request.remote_addr} has visited your page!'
