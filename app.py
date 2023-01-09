@@ -41,7 +41,7 @@ def hello_world():
 
     print(request)
 
-    ip_geo = requests.get(f'https://api.ipgeolocation.io/ipgeo?apiKey={os.environ["GEO_API_KEY"]}&ip={request.access_route[0]}', headers={'Accept': 'application/json'})
+    ip_geo = requests.get(f'https://api.ipgeolocation.io/ipgeo?apiKey={os.environ["GEO_API_KEY"]}&ip={request.access_route[0]}', headers={'Accept': 'application/json'}).json()
     
     if request.remote_addr != "127.0.0.1":
         body_text = f'Somebody with the IP address {request.remote_addr} from {ip_geo["city"]},{ip_geo["state_prov"]},{ip_geo["country_name"]}, has visited your page! Organization: {ip_geo["organization"]}'
