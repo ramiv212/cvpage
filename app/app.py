@@ -11,6 +11,36 @@ import requests
 
 load_dotenv()
 
+def return_remote_addr(remote_addr):
+    if remote_addr:
+        return remote_addr
+    else:
+        return "None"
+
+def return_city(city):
+    if city:
+        return city
+    else:
+        return "None"
+
+def return_state_prov(state_prov):
+    if state_prov:
+        return state_prov
+    else:
+        return "None"
+
+def return_country_name(country_name):
+    if country_name:
+        return country_name
+    else:
+        return "None"
+
+def return_organization(organization):
+    if organization:
+        return organization
+    else:
+        return "None"
+
 def create_app(testing: bool = True):
 
     app = Flask(__name__)
@@ -37,7 +67,6 @@ def create_app(testing: bool = True):
         connection.sendmail(sender_email, receiver_email, text)
 
 
-
     @app.route("/")
     def hello_world():
 
@@ -46,24 +75,27 @@ def create_app(testing: bool = True):
         ip_geo = requests.get(f'https://api.ipgeolocation.io/ipgeo?apiKey={os.environ["GEO_API_KEY"]}&ip={request.access_route[0]}', headers={'Accept': 'application/json'}).json()
         
         if request.remote_addr != "127.0.0.1":
-            body_text = f'Somebody with the IP address {request.remote_addr} from {ip_geo["city"]}, {ip_geo["state_prov"]}, {ip_geo["country_name"]}, has visited your page! Organization: {ip_geo["organization"]}'
+            try:
+                body_text = f'Somebody with the IP address {return_remote_addr(request.remote_addr)} from {return_city(ip_geo["city"])}, {return_state_prov(ip_geo["state_prov"])}, {return_country_name(ip_geo["country_name"])}, has visited your page! Organization: {return_organization(ip_geo["organization"])}'
 
-            msg = MIMEMultipart()
-            msg["from"] = 'ramirovaldes.com'
-            msg["to"] = 'ramiv212@hotmail.com'
-            msg["subject"] = f"Somebody has checked out your CV page!"
-            msg.attach(MIMEText(body_text, 'plain'))
+                msg = MIMEMultipart()
+                msg["from"] = 'ramirovaldes.com'
+                msg["to"] = 'ramiv212@hotmail.com'
+                msg["subject"] = f"Somebody has checked out your CV page!"
+                msg.attach(MIMEText(body_text, 'plain'))
 
-            context = ssl.SSLContext(ssl.PROTOCOL_TLS)
-            connection = smtplib.SMTP(HOST, 587)
-            connection.ehlo()
-            connection.starttls(context=context)
-            connection.ehlo()
-            connection.login(os.environ['HOST_USERNAME'], os.environ['HOST_PASSWORD'])
-            text = msg.as_string()
-            sender_email = 'ramiv212@gmail.com'
-            receiver_email = 'ramiv212@hotmail.com'
-            connection.sendmail(sender_email, receiver_email, text)
+                context = ssl.SSLContext(ssl.PROTOCOL_TLS)
+                connection = smtplib.SMTP(HOST, 587)
+                connection.ehlo()
+                connection.starttls(context=context)
+                connection.ehlo()
+                connection.login(os.environ['HOST_USERNAME'], os.environ['HOST_PASSWORD'])
+                text = msg.as_string()
+                sender_email = 'ramiv212@gmail.com'
+                receiver_email = 'ramiv212@hotmail.com'
+                connection.sendmail(sender_email, receiver_email, text)
+            except:
+                print("Unable to send email alert!")
 
         return render_template('index.html',recaptcha=recaptcha)
 
