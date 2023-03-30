@@ -31,3 +31,7 @@ function sendEmail(body) {
 function redirectToChess() {
     window.location.href = "https://www.chess.ramirovaldes.com"
 }
+
+function redirectToPoGenerator() {
+    window.location.href = "https://www.pogenerator.ramirovaldes.com"
+}

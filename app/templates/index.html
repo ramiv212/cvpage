@@ -13,11 +13,10 @@
         
         <div style="margin-top: 35px">
           <div class="col">
-            <p>
+            <p style="font-size: large;">
               I am an A/V/L Technician and System Designer with more than 10 years in the Audio Recording
-              and Live Production space. In the wake of the pandemic, I began seriously pursuing
-              programming as a personal challenge, and am now seeking to make a full career
-              change towards Web Development. I am a fast learner with a passion for solving problems.
+              and Live Production space, and a freelance Web Developer and programmer. 
+              I am a fast learner with a passion for solving problems.
             </p>
             <div style="display: flex; 
             justify-content: center; 
@@ -151,6 +150,7 @@
             <a href="http://www.clearavl.com">clearavl.com</a>
           </div>
           <div style="margin: 0; padding-bottom: 50px;">
+            <div style="display: flex;"><div style="margin-right: 5px;">•</div><div>Substantially advanced the growth of the company by providing years of knowledge and expertise to tackle larger projects,clients and designs than the company had the ability to handle previously.</div></div>
             <div style="display: flex;"><div style="margin-right: 5px;">•</div><div>Design, Install and Commission A/V/L integration projects for venues and houses of worship</div></div>
             <div style="display: flex;"><div style="margin-right: 5px;">•</div><div>Provide training and customer support/repair for clients</div></div>
             <div style="display: flex;"><div style="margin-right: 5px;">•</div><div>Design portable Audio, Video, and Lighting systems for live corporate events, faith-based live events, live recordings and concerts around the country</div></div>
@@ -165,7 +165,7 @@
             <div>2021 - Present</div>
           </div>
           <div style="margin: 0;">
-            <div style="display: flex;"><div style="margin-right: 5px;">•</div><div>Maintain and/or create websites for clients in my spare time</div></div>
+            <div style="display: flex;"><div style="margin-right: 5px;">•</div><div>Maintain and/or create websites for clients as a freelance contractor</div></div>
           </div>
         </div>
 
@@ -335,6 +335,48 @@
       </div>
 
 
+      <div class="project-container" onclick="redirectToPoGenerator()" style="cursor: pointer;">
+        <div class="project-image-container">
+          <img src="{{ url_for('static', filename='pogenerator.png') }}"  style="width: 100%;" class="project-image">
+        </div>
+        <div class="project-description">
+          <h3 class="experience-section-title">Automated PO Generator</h3><br />
+          <p>I was commisioned to create a web app that woud be able to scan a PDF or image receipt and
+            automatically generate a PDF of a purchase order, with as much information as possible that could be
+            derived from the receipt file. The information that is derived from scanning the receipt includes
+            the PO number, PO date, the person who made the purchase, the date of the purchase, the purchase total,
+            the billing method, the address of the vendor, etc. It will also sign the PDF for the person making the purchase,
+            and finally it will add the image or PDF of the receipt to the second page of the PO. This automation is intended
+            to save the employers of the organization a lot of time and effort. Future plans are to use the Google Email
+            API to send an image to an emai, and have the server auto-generate and send the PO to the corresponding person.
+            This will further increase productivity as it will enable for POs to be auto-generated and sent for recurring
+            subscriptions and purchases.
+          </p>
+          <br>
+          <div style="font-family: 'Roboto Mono', monospace; font-size: 12px;">
+            USED STACK:
+          </div>
+            <div class="project-used-stack-container">
+            <div class="project-used-stack-child">HTML</div>
+            <div class="project-used-stack-child">CSS</div>
+            <div class="project-used-stack-child">Javascript</div>
+            <div class="project-used-stack-child">Python</div>
+            <div class="project-used-stack-child">Flask</div>
+            </div>
+
+            <a href="http://www.pogenerator.ramirovaldes.com">
+            <div style="text-align: right;
+            margin-top: 30px;
+            font-family: 'Roboto Mono', monospace;
+            color: rgb(94, 67, 147);">
+              pogenerator.ramirovaldes.com
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+
       <div class="project-container">
         <div class="project-image-container">
           <iframe src="https://trinket.io/embed/python3/164678c01e" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
@@ -390,9 +432,9 @@
         <div class="project-description">
           <h3 class="experience-section-title">Personal CV Website</h3><br />
           <p>
-            In preparation to start applying for jobs, I decided to return to my roots and
+            I decided to return to my roots and
             use Python to create my CV website, since I have been diving
-            deep into React for months. It could just have easily been a static site
+            deep into React and Javascript lately. It could just have easily been a static site
             but I wanted to go back to coding Python for a little bit to try to keep my
             Python skills sharp. Coding in Python feels just as nice as I remember.
             Like riding a bike. The Flask server handles the contact form POST request,
