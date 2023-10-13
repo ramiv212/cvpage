@@ -72,30 +72,30 @@ def create_app(testing: bool = True):
 
         print(request)
 
-        ip_geo = requests.get(f'https://api.ipgeolocation.io/ipgeo?apiKey={os.environ["GEO_API_KEY"]}&ip={request.access_route[0]}', headers={'Accept': 'application/json'}).json()
+        # ip_geo = requests.get(f'https://api.ipgeolocation.io/ipgeo?apiKey={os.environ["GEO_API_KEY"]}&ip={request.access_route[0]}', headers={'Accept': 'application/json'}).json()
         
-        if request.remote_addr != "127.0.0.1":
-            try:
-                body_text = f'Somebody with the IP address {return_remote_addr(request.remote_addr)} from {return_city(ip_geo["city"])}, {return_state_prov(ip_geo["state_prov"])}, {return_country_name(ip_geo["country_name"])}, has visited your page! Organization: {return_organization(ip_geo["organization"])}'
+        # if request.remote_addr != "127.0.0.1":
+        #     try:
+        #         body_text = f'Somebody with the IP address {return_remote_addr(request.remote_addr)} from {return_city(ip_geo["city"])}, {return_state_prov(ip_geo["state_prov"])}, {return_country_name(ip_geo["country_name"])}, has visited your page! Organization: {return_organization(ip_geo["organization"])}'
 
-                msg = MIMEMultipart()
-                msg["from"] = 'ramirovaldes.com'
-                msg["to"] = 'ramiv212@hotmail.com'
-                msg["subject"] = f"Somebody has checked out your CV page!"
-                msg.attach(MIMEText(body_text, 'plain'))
+        #         msg = MIMEMultipart()
+        #         msg["from"] = 'ramirovaldes.com'
+        #         msg["to"] = 'ramiv212@hotmail.com'
+        #         msg["subject"] = f"Somebody has checked out your CV page!"
+        #         msg.attach(MIMEText(body_text, 'plain'))
 
-                context = ssl.SSLContext(ssl.PROTOCOL_TLS)
-                connection = smtplib.SMTP(HOST, 587)
-                connection.ehlo()
-                connection.starttls(context=context)
-                connection.ehlo()
-                connection.login(os.environ['HOST_USERNAME'], os.environ['HOST_PASSWORD'])
-                text = msg.as_string()
-                sender_email = 'ramiv212@gmail.com'
-                receiver_email = 'ramiv212@hotmail.com'
-                connection.sendmail(sender_email, receiver_email, text)
-            except:
-                print("Unable to send email alert!")
+        #         context = ssl.SSLContext(ssl.PROTOCOL_TLS)
+        #         connection = smtplib.SMTP(HOST, 587)
+        #         connection.ehlo()
+        #         connection.starttls(context=context)
+        #         connection.ehlo()
+        #         connection.login(os.environ['HOST_USERNAME'], os.environ['HOST_PASSWORD'])
+        #         text = msg.as_string()
+        #         sender_email = 'ramiv212@gmail.com'
+        #         receiver_email = 'ramiv212@hotmail.com'
+        #         connection.sendmail(sender_email, receiver_email, text)
+        #     except:
+        #         print("Unable to send email alert!")
 
         return render_template('index.html',recaptcha=recaptcha)
 
